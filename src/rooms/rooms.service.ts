@@ -17,6 +17,7 @@ export class RoomsService {
       .innerJoinAndSelect(HotelEntity, 'h', 'h.hotelId = r.hotelId')
       .select(['r.roomId', 'r.price'])
       .andWhere('h.hotelId = :hotelId', { hotelId })
+      .addOrderBy('r.price', 'DESC')
       .getRawMany();
   }
 }
