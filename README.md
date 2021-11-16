@@ -45,6 +45,7 @@ $ npm run test:cov
 - Błażej Bąk
 - Jan Bachman
 - Aleksandra Popławska
+- Dawid Pasieka
 
 ## License
 
