@@ -15,10 +15,6 @@ export class HotelsService {
     private readonly hotelRepository: Repository<HotelEntity>,
   ) {}
 
-  create(createHotelDto: CreateHotelDto) {
-    return 'This action adds a new hotel';
-  }
-
   findAll(): Observable<Hotel[]> {
     return from(this.hotelRepository.find());
   }
@@ -52,15 +48,4 @@ export class HotelsService {
     return cities.map((city) => city.hotel_city);
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} hotel`;
-  }
-
-  update(id: number, updateHotelDto: UpdateHotelDto) {
-    return `This action updates a #${id} hotel`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} hotel`;
-  }
 }

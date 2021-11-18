@@ -15,16 +15,6 @@ import { UpdateHotelDto } from './dto/update-hotel.dto';
 export class HotelsController {
   constructor(private readonly hotelsService: HotelsService) {}
 
-  @Post()
-  create(@Body() createHotelDto: CreateHotelDto) {
-    return this.hotelsService.create(createHotelDto);
-  }
-
-  @Get()
-  findAll() {
-    return this.hotelsService.findAll();
-  }
-
   @Get('/allcities')
   findAllCities() {
     return this.hotelsService.findAllCities();
@@ -33,20 +23,5 @@ export class HotelsController {
   @Get(':city')
   findAllInCity(@Param('city') city: string) {
     return this.hotelsService.findAllInCity(city);
-  }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.hotelsService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateHotelDto: UpdateHotelDto) {
-    return this.hotelsService.update(+id, updateHotelDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.hotelsService.remove(+id);
   }
 }
